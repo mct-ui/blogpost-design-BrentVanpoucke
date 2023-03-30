@@ -508,30 +508,6 @@ a:active {
 /*
     Components: Author
 */
-
-/*
-    Components: Quote
-*/
-
-/*
-    Component: layout block
-    ---
-    A small component to demonstrate the layout items
-*/
-
-.c-layout-block {
-  background-color: LightGrey;
-  padding: 8px 12px;
-  font-size: 14px;
-  line-height: 16px;
-}
-
-.c-layout-block--ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .c-author {
   display: flex;
   align-items: center;
@@ -559,6 +535,85 @@ a:active {
     line-height: $space-m;
    }
 }
+
+/*
+ Components: Article
+*/
+.c-article__header, .c-article__body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.c-article__header{
+  padding: $space-m $space-m 0;//24px 24px 0
+
+ }
+ 
+ .c-article__body {
+  padding: 0 $space-m;
+ }
+
+ @media (min-width: 768px) {
+  .c-article__header {
+    padding: 48px, 48px, 24px;
+  }
+
+  .c-article__author {
+    padding: 24px;
+  }
+
+  .c-article__body {
+    padding: 24px, 48px;
+  }
+ }
+
+ .c-article__header{
+  padding: $space-m $space-m 0;
+   @include mq(bp2) {
+   padding: $space-xl $space-xl $space-l;
+   }
+  }
+  
+  @media (min-width: 992px) {
+    .c-article__content {
+      display: flex;
+      gap: 24px;
+    }
+  
+    .c-article__author {
+      width: 25%;
+      flex-direction: column;
+      align-items: start;
+    }
+  
+    .c-article__body {
+      width: 75%;
+    }
+   }
+
+/*
+    Components: Quote
+*/
+
+/*
+    Component: layout block
+    ---
+    A small component to demonstrate the layout items
+*/
+
+.c-layout-block {
+  background-color: LightGrey;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.c-layout-block--ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 
 .s-content * + h2 {
 
